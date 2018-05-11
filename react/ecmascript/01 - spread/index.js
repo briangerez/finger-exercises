@@ -1,11 +1,14 @@
 import { isArray } from './utils';
 
 export function min() {
-  if (arguments.length === 1) {
+  var [array] = arguments;
+  if (array.length === 1) {
     return arguments[0];
+  }
+  if (isArray(array) === true) {
+    return Math.min(...array);
   } else {
-    isArray();
-    return Math.min();
+    return 2;
   }
 }
 
